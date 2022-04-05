@@ -119,7 +119,8 @@ $all_advt = [ //Добавлен двумерный массив с товара
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?= $advt['price'] ?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?= number_format($advt['price'], 0, ',', ' ') . " ₽" ?></span> 
+                            <!--Добавлена функция для округления суммы и добавления знака ₽-->
                         </div>
                         <div class="lot__timer timer">
                             12:23
