@@ -5,42 +5,42 @@ $user_name = 'Zodiac'; // укажите здесь ваше имя
 
 $categories = ["Доски и лыжи","Крепления","Ботинки","Одежда","Инструменты","Разное"]; // Добавлен массив с категориями
 
-$alladvt = [ //Добавлен двумерный массив с товарами
+$all_advt = [ //Добавлен двумерный массив с товарами; название скорректировано snake_case способом
     [
-    'title' => '2014 Rossignol District Snowboard',
-    'category' => 'Доски и лыжи',
-    'price' => '10999',
-    'img' => 'img/lot-1.jpg'
+        'title' => '2014 Rossignol District Snowboard',
+        'category' => 'Доски и лыжи',
+        'price' => '10999',
+        'img' => 'img/lot-1.jpg'
     ],
     [
-    'title' => 'DC Ply Mens 2016/2017 Snowboard',
-    'category' => 'Доски и лыжи',
-    'price' => '159999',
-    'img' => 'img/lot-2.jpg'
+        'title' => 'DC Ply Mens 2016/2017 Snowboard',
+        'category' => 'Доски и лыжи',
+        'price' => '159999',
+        'img' => 'img/lot-2.jpg'
     ],
     [
-    'title' => 'Крепления Union Contact Pro 2015 года размер L/XL',
-    'category' => 'Крепления',
-    'price' => '8000',
-    'img' => 'img/lot-3.jpg'
+        'title' => 'Крепления Union Contact Pro 2015 года размер L/XL',
+        'category' => 'Крепления',
+        'price' => '8000',
+        'img' => 'img/lot-3.jpg'
     ],
     [
-    'title' => 'Ботинки для сноуборда DC Mutiny Charocal',
-    'category' => 'Ботинки',
-    'price' => '10999',
-    'img' => 'img/lot-4.jpg'
+        'title' => 'Ботинки для сноуборда DC Mutiny Charocal',
+        'category' => 'Ботинки',
+        'price' => '10999',
+        'img' => 'img/lot-4.jpg'
     ],
     [
-    'title' => 'Куртка для сноуборда DC Mutiny Charocal',
-    'category' => 'Одежда',
-    'price' => '7500',
-    'img' => 'img/lot-5.jpg'
+        'title' => 'Куртка для сноуборда DC Mutiny Charocal',
+        'category' => 'Одежда',
+        'price' => '7500',
+        'img' => 'img/lot-5.jpg'
     ],
     [
-    'title' => 'Маска Oakley Canopy',
-    'category' => 'Разное',
-    'price' => '5400',
-    'img' => 'img/lot-6.jpg'
+        'title' => 'Маска Oakley Canopy',
+        'category' => 'Разное',
+        'price' => '5400',
+        'img' => 'img/lot-6.jpg'
     ]
 ]
 ?>
@@ -108,10 +108,10 @@ $alladvt = [ //Добавлен двумерный массив с товара�
         </div>
         <ul class="lots__list">
             <!--заполните этот список из массива с товарами-->
-            <?php foreach ($alladvt as $advt): ?>
+            <?php foreach ($all_advt as $advt): ?>
             <li class="lots__item lot">
                 <div class="lot__image">
-                    <img src=<?= $advt['img'] ?> width="350" height="260" alt="img">
+                    <img src=<?= $advt['img'] ?> width="350" height="260" alt="Изображение_товара">
                 </div>
                 <div class="lot__info">
                     <span class="lot__category"><?= $advt['category'] ?></span>
@@ -141,11 +141,12 @@ $alladvt = [ //Добавлен двумерный массив с товара�
             <?php foreach ($categories as $category): ?>
             <li class="nav__item">
                 <a href="pages/all-lots.html"><?=$category ?></a>
+            </li>
             <?php endforeach; ?>
             <!-- Список заполнен из массива категорий (через foreach)-->
 
             <!-- Альтернативный способ - через while-->
-            <!-- Не смог закомментировать строку 149, пришлось оставить её и 157-->
+            <!-- Оставил в таком виде-->
             <?php 
 /*             $index = 0; */
 /*             $num = count($categories); */
@@ -153,10 +154,9 @@ $alladvt = [ //Добавлен двумерный массив с товара�
 /*             <li class="nav__item"> */
 /*                 <a href="pages/all-lots.html"><?=$categories[$index] ?></a> */
 /*                 <?php $index++; ?> */
-/*             <?php endwhile; ?> */            
+/*             <?php endwhile; ?> */
+/*             </li> */            
             ?>
-
-            </li>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
