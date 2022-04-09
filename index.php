@@ -42,7 +42,17 @@ $all_advt = [ //Добавлен двумерный массив с товара
         'price' => '5400',
         'img' => 'img/lot-6.jpg'
     ]
-]
+];
+/* Функция для форматирования суммы и добавления к ней знака рубля */ 
+function edit_lot_cost($lot_cost) {
+    $lot_cost = ceil($lot_cost);
+    if ($lot_cost >= 1000) {
+        return number_format($lot_cost, 0, ',', ' ') . " ₽";
+    }
+    elseif ($lot_cost < 1000) {
+        return ($lot_cost . " ₽");
+    }
+};
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -119,7 +129,7 @@ $all_advt = [ //Добавлен двумерный массив с товара
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?= $advt['price'] ?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?= edit_lot_cost($advt['price']); /* Функция */?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
