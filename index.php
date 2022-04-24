@@ -1,5 +1,7 @@
 <?php
 
+require('helpers.php');
+
 $is_auth = rand(0, 1);
 
 $user_name = 'Zodiac'; // укажите здесь ваше имя
@@ -57,12 +59,20 @@ function edit_lot_cost($lot_cost) {
         return ($lot_cost . " ₽");
     }
 };
-require('helpers.php');
-$page_content = include_template('main.php', ['all_advt' => $all_advt, 
-    'categories' => $categories]); 
-$layout_content = include_template('layout.php', 
-    ['is_auth' => $is_auth, 'user_name' => $user_name, 
-    'page_name' => $page_name, 'page_content' => $page_content, 
-    'categories' => $categories]); 
+
+$page_content = include_template(
+    'main.php', 
+        [
+        'all_advt' => $all_advt, 
+        'categories' => $categories
+        ]); 
+$layout_content = include_template(
+    'layout.php', 
+        [
+        'is_auth' => $is_auth, 
+        'user_name' => $user_name, 
+        'page_name' => $page_name, 
+        'page_content' => $page_content, 
+        'categories' => $categories
+        ]); 
 print($layout_content);
-?>

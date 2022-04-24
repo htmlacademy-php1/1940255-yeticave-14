@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <main class="container">
     <section class="promo">
         <h2 class="promo__title">Нужен стафф для катки?</h2>
@@ -42,4 +41,3 @@
         </ul>
     </section>
 </main>
-</html>
