@@ -31,7 +31,7 @@
                             <span class="lot__cost"><?= edit_lot_cost($advt['price']); /* Функция */?></span>
                         </div>
                         <div class="lot__timer timer">
-                            12:23
+                            <?= expiration_time($advt['expiration']) ?>
                         </div>
                     </div>
                 </div>
