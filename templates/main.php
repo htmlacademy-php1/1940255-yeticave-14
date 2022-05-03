@@ -30,7 +30,7 @@
                             <span class="lot__amount">Стартовая цена</span>
                             <span class="lot__cost"><?= edit_lot_cost($advt['price']); /* Функция */?></span>
                         </div>
-                        <div class="lot__timer timer">
+                        <div class="lot__timer timer <?= timer_ending($advt['expiration']) ?>">
                             <?= expiration_time($advt['expiration']) ?>
                         </div>
                     </div>
