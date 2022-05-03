@@ -16,7 +16,7 @@ $all_advt = [ //Добавлен двумерный массив с товара
         'category' => 'Доски и лыжи',
         'price' => '10999',
         'img' => 'img/lot-1.jpg',
-        'expiration' => '2022-05-04'
+        'expiration' => '2022-05-05'
     ],
     [
         'title' => 'DC Ply Mens 2016/2017 Snowboard',
@@ -68,24 +68,22 @@ function edit_lot_cost($lot_cost) {
 
 /* Функция для подсчета оставшегося времени */
 function expiration_time($expiration_date) {
-    $cur_date = date("Y-m-d H:i:s"); 
-    $diff_seconds = strtotime($expiration_date) - strtotime($cur_date);
+    $diff_seconds = strtotime($expiration_date) - time();
     $diff_minutes = floor($diff_seconds / 60 % 60);
     $diff_hours = floor($diff_seconds / 3600); 
+
     return str_pad($diff_hours, 2, "0", STR_PAD_LEFT) . ":" . 
-    str_pad($diff_minutes % 60, 2, "0", STR_PAD_LEFT);
+    str_pad($diff_minutes, 2, "0", STR_PAD_LEFT);
 };
 
 /* Функция для добавления класса таймеру, если времени осталось менее 1 часа */
 function timer_ending($expiration_date) {
-    $cur_date = date("Y-m-d H:i:s"); 
-    $diff_seconds = strtotime($expiration_date) - strtotime($cur_date);
+    $result = ("");
+    $diff_seconds = strtotime($expiration_date) - time();
     if ($diff_seconds <= 3600) {
-        return "timer--finishing"; 
+        $result = "timer--finishing"; 
     }
-    elseif ($diff_seconds > 3600) {
-        return "";
-    }
+    return $result;
 };
 
 $page_content = include_template(

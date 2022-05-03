@@ -22,7 +22,7 @@
 
             <nav class="user-menu">
             <!-- Работа с условиями --> 
-            <?php if ($is_auth == 1): ?>
+                <?php if ($is_auth == 1): ?>
                     <div class="user-menu__logged">
                         <p><?= $user_name ?></p>
                         <a class="user-menu__bets" href="pages/my-bets.html">Мои ставки</a>
@@ -58,19 +58,6 @@
             </li>
             <?php endforeach; ?>
             <!-- Список заполнен из массива категорий (через foreach)-->
-
-            <!-- Альтернативный способ - через while-->
-            <!-- Оставил в таком виде-->
-            <?php 
-/*             $index = 0; */
-/*             $num = count($categories); */
-/*             while ($index < $num): ?> */
-/*             <li class="nav__item"> */
-/*                 <a href="pages/all-lots.html"><?=$categories[$index] ?></a> */
-/*                 <?php $index++; ?> */
-/*             <?php endwhile; ?> */
-/*             </li> */            
-            ?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
